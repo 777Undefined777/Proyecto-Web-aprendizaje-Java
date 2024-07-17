@@ -1,0 +1,201 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* Agregado para posicionar correctamente el video de fondo */
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Colocar detrás de todo el contenido */
+    object-fit: cover; /* Cubrir todo el área */
+}
+
+header {
+    background-color: #111;
+    width: 100%;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    color: #8aff8a; /* Verde claro */
+}
+
+nav {
+    display: flex;
+    gap: 0.5em;
+}
+
+nav button {
+    background-color: #111; /* Mismo color que el encabezado */
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+nav button:hover {
+    background-color: #0e8732; /* Verde más claro al hover */
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    padding: 2em 0;
+    margin-top: 4em;
+}
+
+section {
+    margin-bottom: 2em;
+    text-align: justify;
+    display: none; /* Ocultar las secciones por defecto */
+}
+
+#main-content {
+    display: block;
+    /* Mostrar la sección principal por defecto */
+}
+
+pre {
+    background-color: #222;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+footer {
+    background-color: #111;
+    width: 100%;
+    padding: 0.5em;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+footer button {
+    background-color: #111; /* Mismo color que el encabezado */
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+footer button:hover {
+    background-color: #0e8732; /* Verde más claro al hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modal-content form label {
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+
+.modal-content form input, .modal-content form button {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #888;
+    border-radius: 3px;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="email"],
+.modal-content form input[type="password"] {
+    width: calc(100% - 2em);
+}
+
+.modal-content form button {
+    background-color: #111; /* Mismo color que el encabezado */
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.modal-content form button:hover {
+    background-color: #0e8732; /* Verde más claro al hover */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav button {
+        padding: 0.3em 0.5em;
+    }
+
+    main {
+        padding: 1em 0;
+    }
+
+
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Aprende Java con Jorge</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<video autoplay muted loop id="background-video">
+    <source th:src="@{/hcvideo.mp4}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<header>
+    <h1>{........</h1>
+    <h1>Aprende Java conmigo</h1>
+    <h1>.........}</h1>
+    <nav>
+        <button id="showMainButton">Inicio</button>
+        <button id="openRegisterModal">Registrarse</button>
+        <button id="openLoginModal">Iniciar Sesión</button>
+        <button id="aboutButton">Acerca de</button>
+        <button id="portfolioButton">Portafolio</button>
+        <button id="contactButton">Contacto</button>
+    </nav>
+</header>
+
+<main>
+    <section id="main-content">
+        <h2>Inicio</h2>
+        <p>Bienvenido a nuestra página web dedicada a la educación. Este sitio está exclusivamente dedicado a la enseñanza de Java. Aquí encontrarás diversos ejemplos y explicaciones detalladas para aprender este lenguaje de programación.</p>
+        <p>Ejemplo de un programa simple en Java:</p>
+        <pre><code>
+// Programa en Java que imprime "Hola, Mundo!"
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("Hola, Mundo!");
+    }
+}
+            </code></pre>
+        <p>Este programa imprime "Hola, Mundo!" en la consola. Es el primer paso para comenzar con Java.</p>
+        <p>Para ver más contenido, por favor regístrate e inicia sesión.</p>
+    </section>
+
+    <section id="main-content" >
+        <h2>Estructuras de Datos</h2>
+        <p>Las estructuras de datos son fundamentales para la programación. Aquí hay algunos ejemplos de estructuras de datos en Java.</p>
+        <p>Ejemplo de una lista enlazada:</p>
+        <pre><code>
+// Implementación de una lista enlazada simple en Java
+class Nodo {
+    int data;
+    Nodo next;
+
+    Nodo(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+public class ListaEnlazada {
+    Nodo head;
+
+    public void insertar(int data) {
+        Nodo nuevoNodo = new Nodo(data);
+        nuevoNodo.next = head;
+        head = nuevoNodo;
+    }
+
+    public void imprimirLista() {
+        Nodo n = head;
+        while (n != null) {
+            System.out.print(n.data + " ");
+            n = n.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        ListaEnlazada lista = new ListaEnlazada();
+        lista.insertar(1);
+        lista.insertar(2);
+        lista.insertar(3);
+        lista.imprimirLista(); // Salida: 3 2 1
+    }
+}
+            </code></pre>
+        <p>Este programa crea una lista enlazada simple y la imprime.</p>
+    </section>
+
+    <section  id="main-content">
+        <h2>Programación Orientada a Objetos (POO)</h2>
+        <p>La programación orientada a objetos (POO) es un paradigma de programación basado en el concepto de "objetos". Aquí hay algunos ejemplos de POO en Java.</p>
+        <p>Ejemplo de una clase y objeto en Java:</p>
+        <pre><code>
+// Clase Persona con atributos y métodos
+class Persona {
+    String nombre;
+    int edad;
+
+    // Constructor
+    Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    // Método para mostrar información
+    void mostrarInfo() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+    }
+
+    public static void main(String[] args) {
+        Persona persona1 = new Persona("Jorge", 25);
+        persona1.mostrarInfo(); // Salida: Nombre: Jorge Edad: 25
+    }
+}
+            </code></pre>
+        <p>Este programa define una clase Persona y crea un objeto de esa clase.</p>
+    </section>
+
+    <section id="about">
+        <h2>Acerca de</h2>
+        <p>Esta página web está diseñada para ayudar a los estudiantes a aprender Java de una manera sencilla y efectiva. Proporcionamos ejemplos claros y explicaciones detalladas para cada concepto.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en ponerte en contacto con nosotros a través del siguiente correo electrónico: <a href="mailto:contacto@mipaginaweb.com">contacto@mipaginaweb.com</a>.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portafolio</h2>
+        <p>Aquí se mostrará mi portafolio.</p>
+    </section>
+</main>
+
+<footer>
+    <!-- Contenido del footer si es necesario -->
+</footer>
+
+<!-- Modal Registro -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Registro</h2>
+        <form id="registerForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Inicio de Sesión -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <label for="loginUsername">Usuario:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required>
+            <label for="loginPassword">Contraseña:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
+
+<!-- Script JavaScript -->
+<script src="/scripts.js"></script>
+</body>
+</html>
